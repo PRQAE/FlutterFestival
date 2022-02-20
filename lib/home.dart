@@ -1,8 +1,7 @@
+import 'package:dash_invitation/arabic/arabic.dart';
 import 'package:dash_invitation/english/english.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-
-import 'arabic/arabic.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);

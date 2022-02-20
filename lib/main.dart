@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         ],
         home: ResponsiveSizer(
           builder: (context, orientation, screenType) {
-            return const Home();
+            return  const Home();
           },
         ));
   }
