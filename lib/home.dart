@@ -1,5 +1,8 @@
+import 'package:dash_invitation/english/english.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
+
+import 'arabic/arabic.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -13,38 +16,23 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xfff6f7f9),
+        backgroundColor: const Color.fromARGB(0, 255, 255, 255),
         elevation: 0,
-        iconTheme: const IconThemeData(color: Color(0xff00a992)),
+        iconTheme: const IconThemeData(color: Color(0xFF00CCFF)),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SizedBox(
-              child: Padding(
-            padding: const EdgeInsets.only(right: 20, left: 20),
-            child: Column(children: [
-              const SizedBox(
-                height: 50.0,
-              ),
-              Image.asset('assets/dash.png'),
-              const SizedBox(
-                height: 30.0,
-              ),
-              const Text('ادخل رمز التحقق',
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600)),
-              const SizedBox(
-                height: 10.0,
-              ),
-              const Text(
-                'قمنا بإرسال رمز تحقق',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w300),
-                textDirection: TextDirection.rtl,
-                textAlign: TextAlign.center,
-              ),
-            ]),
-          )),
+          const Spacer(),
+          Image.asset('assets/dash.png', height: 40.h),
+          const SizedBox(
+            height: 30.0,
+          ),
+          Text('مرحباً بك في تطبيق دعوات داش',
+              style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w600)),
+          Text("Welcome in Dash's Invitiaion App.",
+              style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.w600)),
           const Spacer(),
           Container(
             margin: const EdgeInsets.only(left: 20, right: 20),
@@ -52,18 +40,41 @@ class _HomeState extends State<Home> {
             height: 70,
             child: TextButton(
               style: TextButton.styleFrom(
-                backgroundColor: const Color(0xff00a991),
+                backgroundColor: const Color(0xFF00CCFF),
                 //padding: const EdgeInsets.only(top: 30, bottom: 30)
               ),
-              child: const Text('دخول',
+              child: Text('العربية',
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 20,
+                      fontSize: 20.sp,
                       fontWeight: FontWeight.w600)),
-              onPressed: () => Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Home()),
-                  (Route<dynamic> route) => false),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ArabicHome()),
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 10.0,
+          ),
+          Container(
+            margin: const EdgeInsets.only(left: 20, right: 20),
+            width: double.infinity,
+            height: 70,
+            child: TextButton(
+              style: TextButton.styleFrom(
+                backgroundColor: const Color(0xFF00CCFF),
+                //padding: const EdgeInsets.only(top: 30, bottom: 30)
+              ),
+              child: Text('English',
+                  style: TextStyle(
+                      color: const Color(0xFFFFFFFF),
+                      fontSize: 20.sp,
+                      fontWeight: FontWeight.w600)),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const EnglishHome()),
+              ),
             ),
           ),
           const SizedBox(
