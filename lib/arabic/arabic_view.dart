@@ -102,15 +102,15 @@ class ArabicView extends StatelessWidget {
                             fontSize: 20.sp,
                             fontWeight: FontWeight.w600)),
                     onPressed: () => Share.share("""
-                        دعوة حضور
+دعوة حضور
 
-                        عزيزي / $name
+عزيزي / $name
 
-                        سأسعد برؤيتك يوم 19 نوفمبر،
-                        $cityText
+سأسعد برؤيتك يوم 19 نوفمبر،
+$cityText
                         
-                        مع تحياتي،
-                        داش.
+مع تحياتي،
+داش.
                         """, subject: 'دعوة حضور لـ $name')),
               ),
               const SizedBox(

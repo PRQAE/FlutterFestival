@@ -24,7 +24,7 @@ class EnglishView extends StatelessWidget {
     ScreenshotController screenshotController = ScreenshotController();
 
     return Directionality(
-        textDirection: TextDirection.rtl,
+        textDirection: TextDirection.ltr,
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: const Color.fromARGB(0, 255, 255, 255),
@@ -62,7 +62,8 @@ class EnglishView extends StatelessWidget {
                                           fontSize: 18.sp,
                                           fontWeight: FontWeight.w600)),
                                   const SizedBox(height: 10),
-                                  Text("I'll be Happy to See You on 19th of Nov,",
+                                  Text(
+                                      "I'll be Happy to See You on 19th of Nov,",
                                       style: TextStyle(
                                           fontSize: 18.sp,
                                           fontWeight: FontWeight.w600)),
@@ -102,15 +103,15 @@ class EnglishView extends StatelessWidget {
                             fontSize: 20.sp,
                             fontWeight: FontWeight.w600)),
                     onPressed: () => Share.share("""
-                        Invitation
+Invitation
 
-                        Dear $name
+Dear $name
 
-                        I'll be Happy to See You on 19th of Nov,
-                        $cityText
+I'll be Happy to See You on 19th of Nov,
+$cityText
                         
-                        Kind Regards,
-                        Dash.
+Kind Regards,
+Dash.
                         """, subject: 'Invitation For $name')),
               ),
               const SizedBox(

@@ -18,19 +18,22 @@ class _EnglishHomeState extends State<EnglishHome> {
     return Directionality(
         textDirection: TextDirection.ltr,
         child: Scaffold(
-          appBar: AppBar(
-            backgroundColor: const Color.fromARGB(0, 255, 255, 255),
-            elevation: 0,
-            iconTheme: const IconThemeData(color: Color(0xFF00CCFF)),
-          ),
-          body: FormBuilder(
+            appBar: AppBar(
+              backgroundColor: const Color.fromARGB(0, 255, 255, 255),
+              elevation: 0,
+              iconTheme: const IconThemeData(color: Color(0xFF00CCFF)),
+            ),
+            body: FormBuilder(
               key: _formKey,
               autovalidateMode: AutovalidateMode.onUserInteraction,
-              child: Column(
+              child: SingleChildScrollView(
+                  child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  const Spacer(),
+                  const SizedBox(
+                    height: 50.0,
+                  ),
                   Image.asset(
                     'assets/dash-smart.png',
                     height: 40.h,
@@ -38,7 +41,7 @@ class _EnglishHomeState extends State<EnglishHome> {
                   const SizedBox(
                     height: 30.0,
                   ),
-                  Text('Enter name',
+                  Text('Enter Invitated Name',
                       style: TextStyle(
                           fontSize: 20.sp, fontWeight: FontWeight.w600)),
                   const SizedBox(
@@ -93,9 +96,9 @@ class _EnglishHomeState extends State<EnglishHome> {
                             border: OutlineInputBorder(), labelText: 'City')),
                   ),
                   const SizedBox(
-                    height: 20.0,
+                    height: 50.0,
                   ),
-                  const Spacer(),
+                  
                   Container(
                     margin: const EdgeInsets.only(left: 20, right: 20),
                     width: double.infinity,
@@ -129,6 +132,6 @@ class _EnglishHomeState extends State<EnglishHome> {
                   ),
                 ],
               )),
-        ));
+            )));
   }
 }
